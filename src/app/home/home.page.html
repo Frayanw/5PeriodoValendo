@@ -1,20 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Bem-vindo à Academia</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Gerenciar Alunos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Gerencie os cadastros dos alunos da academia.</p>
+      <!-- Botão para redirecionar para a página de lista de alunos -->
+      <ion-button expand="full" routerLink="/lista-alunos">Ver Alunos</ion-button>
+      <ion-button expand="full" routerLink="/cadastro">Cadastrar Novo Aluno</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

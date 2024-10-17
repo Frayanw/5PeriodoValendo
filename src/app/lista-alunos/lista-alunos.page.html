@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Alunos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let aluno of alunos">
+      <ion-label>
+        <h2>{{ aluno.nome }}</h2>
+        <p>{{ aluno.email }}</p>
+      </ion-label>
+      
+      <!-- Botão para visualizar os treinos -->
+      <ion-button routerLink="/lista-treinos/{{ aluno.id }}">Treinos</ion-button>
+      
+      <!-- Botão para editar o aluno -->
+      <ion-button (click)="editarAluno(aluno.id)">Editar</ion-button>
+      
+      <!-- Botão para excluir o aluno -->
+      <ion-button color="danger" (click)="excluirAluno(aluno.id)">Excluir</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

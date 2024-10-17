@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../services/database.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: 'app-lista-alunos',
+  templateUrl: './lista-alunos.page.html',
+  styleUrls: ['./lista-alunos.page.scss'],
 })
-export class HomePage implements OnInit {
+export class ListaAlunosPage implements OnInit {
+  // Defina o tipo explicitamente como um array de objetos com as propriedades dos alunos
   alunos: { id: number, nome: string, email: string }[] = [];
 
   constructor(private dbService: DatabaseService) {}
@@ -17,7 +18,7 @@ export class HomePage implements OnInit {
 
   carregarAlunos() {
     this.dbService.getAlunos().then((data) => {
-      this.alunos = data;
+      this.alunos = data; // Atribui a lista de alunos
     }).catch(e => console.error('Erro ao carregar alunos:', e));
   }
 
@@ -25,7 +26,7 @@ export class HomePage implements OnInit {
     this.dbService.deleteAluno(id)
       .then(() => {
         console.log('Aluno excluído com sucesso!');
-        this.carregarAlunos();
+        this.carregarAlunos(); // Atualizar a lista após a exclusão
       })
       .catch(e => console.error('Erro ao excluir aluno:', e));
   }
